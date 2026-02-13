@@ -1,125 +1,427 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Damon Phoenix - Web Developer & Musician based in Hawaii. Portfolio coming soon.">
+
+    <meta name="author" content="Damon Phoenix">
+
+    <meta property="og:title" content="Damon Phoenix - Developer & Musician">
+
+    <meta property="og:description" content="Web Developer & Musician. Portfolio in development.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://phx.cx">
+
+    <title>Damon Phoenix - Developer & Musician</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+
+            background: #0a0a0a;
+
+            color: #ffffff;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .container {
+
+            max-width: 600px;
+
+            animation: fadeIn 1.5s ease-in;
+
+        }
+
+
+        @keyframes fadeIn {
+
+            from { 
+
+                opacity: 0;
+
+                transform: translateY(20px);
+
+            }
+
+            to { 
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        .logo {
+
+            font-size: 48px;
+
+            margin-bottom: 30px;
+
+            animation: float 3s ease-in-out infinite;
+
+        }
+
+
+        @keyframes float {
+
+            0%, 100% { transform: translateY(0px); }
+
+            50% { transform: translateY(-10px); }
+
+        }
+
+
+        h1 {
+
+            font-size: 72px;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+
+            letter-spacing: -2px;
+
+            line-height: 1;
+
+        }
+
+
+        .gradient-text {
+
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #667eea);
+
+            background-size: 300% auto;
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+
+            animation: gradient 4s ease infinite;
+
+        }
+
+
+        @keyframes gradient {
+
+            0%, 100% { background-position: 0% 50%; }
+
+            50% { background-position: 100% 50%; }
+
+        }
+
+
+        .subtitle {
+
+            font-size: 24px;
+
+            color: #888;
+
+            margin-bottom: 15px;
+
+            font-weight: 400;
+
+        }
+
+
+        .description {
+
+            font-size: 18px;
+
+            color: #666;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 50px;
+
+            padding: 12px 24px;
+
+            background: rgba(102, 126, 234, 0.1);
+
+            border: 1px solid rgba(102, 126, 234, 0.2);
+
+            border-radius: 50px;
+
+            font-size: 14px;
+
+            color: #aaa;
+
+            font-weight: 500;
+
+        }
+
+
+        .pulse {
+
+            width: 8px;
+
+            height: 8px;
+
+            background: #667eea;
+
+            border-radius: 50%;
+
+            animation: pulse 2s ease infinite;
+
+        }
+
+
+        @keyframes pulse {
+
+            0%, 100% {
+
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+
+            }
+
+            50% {
+
+                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+
+            }
+
+        }
+
+
+        .links {
+
+            display: flex;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #888;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            transition: all 0.3s ease;
+
+            padding: 8px 0;
+
+            border-bottom: 2px solid transparent;
+
+        }
+
+
+        .link:hover {
+
+            color: #667eea;
+
+            border-bottom-color: #667eea;
+
+        }
+
+
+        .link svg {
+
+            width: 20px;
+
+            height: 20px;
+
+            fill: currentColor;
+
+        }
+
+
+        .contact {
+
+            margin-top: 60px;
+
+            padding-top: 40px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+        }
+
+
+        .contact-label {
+
+            font-size: 14px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            color: #666;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .email-link {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 20px;
+
+            font-weight: 500;
+
+            transition: color 0.3s;
+
+        }
+
+
+        .email-link:hover {
+
+            color: #667eea;
+
+        }
+
+
+        /* Responsive */
+
+        @media (max-width: 768px) {
+
+            .logo { font-size: 36px; }
+
+            h1 { font-size: 48px; }
+
+            .subtitle { font-size: 20px; }
+
+            .description { font-size: 16px; }
+
+            .links { flex-direction: column; gap: 15px; }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Damon Phoenix - Coming Soon&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #0a0a0a;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 500px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeIn 1.5s ease-in;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeIn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 1; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 64px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -1px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gradient-text {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-size: 200% auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-clip: text;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: gradient 3s ease infinite;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@keyframes gradient {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% { background-position: 0% 50%; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>50% { background-position: 100% 50%; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #888;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.status {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.05);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #aaa;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.pulse {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #667eea;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: pulse 2s ease infinite;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@keyframes pulse {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>50% {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>h1 { font-size: 48px; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>p { font-size: 18px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="gradient-text"&gt;Damon Phoenix&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Web Developer &amp; Musician&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Building something amazing.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="status"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="pulse"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>Portfolio in development</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <div class="container">
+
+        <div class="logo">🔥</div>
+
+        
+
+        <h1 class="gradient-text">Damon Phoenix</h1>
+
+        
+
+        <p class="subtitle">Web Developer & Musician</p>
+
+        
+
+        <p class="description">Building innovative web experiences and creating music. Based in Hawaii.</p>
+
+        
+
+        <div class="status">
+
+            <span class="pulse"></span>
+
+            Portfolio in development
+
+        </div>
+
+
+        <div class="links">
+
+            <a href="https://damonphoenix.com" class="link" target="_blank" rel="noopener">
+
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+
+                Main Website
+
+            </a>
+
+            
+
+            <a href="https://github.com/damonphoenix" class="link" target="_blank" rel="noopener">
+
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+
+                GitHub
+
+            </a>
+
+        </div>
+
+
+        <div class="contact">
+
+            <div class="contact-label">Get in touch</div>
+
+            <a href="mailto:hello@phx.cx" class="email-link">hello@phx.cx</a>
+
+        </div>
+
+    </div>
+
 </body>
+
 </html>

@@ -520,17 +520,17 @@ img {
 
 .about__image-wrapper {
   position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
   aspect-ratio: 4 / 5;
-  background: transparent;
-  clip-path: url(#about-mask);
-  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.45));
+  background: var(--bg-secondary);
 }
 
 .about__image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
 }
 
@@ -538,12 +538,8 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(41, 151, 255, 0.08) 0%,
-    transparent 45%,
-    rgba(0, 0, 0, 0.15) 100%
-  );
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
   pointer-events: none;
 }
 

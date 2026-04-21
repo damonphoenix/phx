@@ -184,12 +184,9 @@ img {
   color: var(--accent);
 }
 
-/* Logo SVG theme colors */
-.logo-moon { fill: #f5e040; }
-
-/* Complementary hue to site blue (#2997ff ≈ hsl(209°)) → hsl(29°) = orange */
-[data-theme="dark"]  .logo-sun { fill: #ff9029; }
-[data-theme="light"] .logo-sun { fill: #e66c00; }
+/* Phoenix logo color — complementary orange to site blue */
+[data-theme="dark"]  .nav__logo-svg { color: #ff9029; }
+[data-theme="light"] .nav__logo-svg { color: #e66c00; }
 
 .nav__links {
   display: flex;

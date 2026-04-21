@@ -1,13 +1,36 @@
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <mask id="logo-mask">
-      <circle cx="50" cy="50" r="46" fill="white"/>
-    </mask>
-  </defs>
-  <g mask="url(#logo-mask)">
-    <!-- Moon: full boundary circle (yellow) -->
-    <circle cx="50" cy="50" r="46" fill="#f5e040"/>
-    <!-- Sun: smaller, offset upper-right (orange) -->
-    <circle cx="59" cy="41" r="40" fill="#ff9029"/>
-  </g>
+<svg viewBox="0 0 100 96" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+  <!--
+    Minimalist Phoenix — Golden Ratio (φ ≈ 1.618) proportioned
+    Base unit b = 22:
+      Head flame tip  y = 6
+      Wing root       y = 28   (6  + b       = 28)
+      Wing tips       y = 42   (28 + b/φ     ≈ 42)
+      Body base       y = 64   (28 + b×φ     ≈ 64)
+      Tail tips       y = 86   (64 + b       = 86)
+      Wing half-span  x = 36   (body h 58 × 0.618 ≈ 35.8)
+  -->
+
+  <!-- Body flame — teardrop rising to a flame tip -->
+  <path d="M 50,6 C 57,17 58,30 55,43 C 53,51 51,58 50,64
+           C 49,58 47,51 45,43 C 42,30 43,17 50,6 Z"/>
+
+  <!-- Left wing — upswept crescent, tip at (10,34) -->
+  <path d="M 50,28 C 38,21 24,17 10,23
+           C 5,27 4,35 8,41
+           C 12,47 22,47 33,42
+           C 42,38 47,33 50,28 Z"/>
+
+  <!-- Right wing — mirror -->
+  <path d="M 50,28 C 62,21 76,17 90,23
+           C 95,27 96,35 92,41
+           C 88,47 78,47 67,42
+           C 58,38 53,33 50,28 Z"/>
+
+  <!-- Tail feathers — three flowing strokes -->
+  <path fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"
+        d="M 46,64 C 41,72 36,79 30,87"/>
+  <path fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"
+        d="M 50,64 C 50,72 50,80 50,88"/>
+  <path fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"
+        d="M 54,64 C 59,72 64,79 70,87"/>
 </svg>

@@ -211,9 +211,11 @@ img {
 }
 
 .nav__cta {
-  font-size: 13px;
-  padding: 8px 18px;
+  font-size: 13px !important;
+  padding: 6px 16px !important;
   border-radius: 980px;
+  color: #fff !important;
+  line-height: 1 !important;
 }
 
 .nav__theme-toggle {

@@ -1009,9 +1009,39 @@ img {
 }
 
 /* --- Responsive --- */
+@media (max-width: 1024px) {
+  .section {
+    padding: 100px 32px;
+  }
+
+  .about__grid {
+    gap: 40px;
+  }
+
+  .work__card-content {
+    padding: 24px;
+  }
+
+  .music__content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 860px) {
+  .about__grid, .music__content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .about__image-wrapper {
+    aspect-ratio: 16/9;
+    max-height: 480px;
+  }
+}
+
 @media (max-width: 768px) {
   .section {
-    padding: var(--section-padding-mobile) 20px;
+    padding: var(--section-padding-mobile) 24px;
   }
 
   .nav__links {
@@ -1024,11 +1054,6 @@ img {
 
   .nav__mobile-menu.show {
     display: block;
-  }
-
-  .about__grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
   }
 
   .about__image-wrapper {
@@ -1047,6 +1072,7 @@ img {
 
   .work__grid {
     grid-template-columns: 1fr;
+    margin-top: 40px;
   }
 
   .work__card:first-child {
@@ -1057,33 +1083,36 @@ img {
     aspect-ratio: 16/9;
   }
 
-  .music__content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
   .music__visual {
     max-width: 360px;
+    margin: 0 auto;
   }
 
   .skills__grid {
     grid-template-columns: 1fr;
+    margin-top: 40px;
   }
 
   .hero__name {
-    font-size: clamp(40px, 12vw, 72px);
+    font-size: clamp(48px, 12vw, 72px);
   }
 }
 
 @media (max-width: 480px) {
+  .hero__name {
+    font-size: clamp(40px, 11vw, 52px);
+  }
+
   .hero__cta-group {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 320px;
   }
 
   .btn {
     width: 100%;
-    max-width: 280px;
     justify-content: center;
   }
 
@@ -1091,8 +1120,28 @@ img {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+  
+  .about__stat-number {
+    font-size: 32px;
+  }
+  
+  .music__links {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .music__link {
+    justify-content: center;
+  }
 
   .contact__social {
     gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .contact__email-link {
+    font-size: clamp(22px, 6vw, 28px);
   }
 }

@@ -20,12 +20,14 @@
       <a href="#hero" class="nav__logo" aria-label="Damon Phoenix">
         <svg class="nav__logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <clipPath id="nav-logo-clip">
-              <circle cx="50" cy="50" r="46"/>
-            </clipPath>
+            <mask id="nav-logo-mask">
+              <circle cx="50" cy="50" r="46" fill="white"/>
+            </mask>
           </defs>
-          <circle class="logo-moon" cx="50" cy="50" r="46"/>
-          <circle class="logo-sun"  cx="62" cy="38" r="44" clip-path="url(#nav-logo-clip)"/>
+          <g mask="url(#nav-logo-mask)">
+            <circle class="logo-moon" cx="50" cy="50" r="46"/>
+            <circle class="logo-sun"  cx="59" cy="41" r="40"/>
+          </g>
         </svg>
         <span>Damon <span class="nav__logo-accent">Phoenix</span></span>
       </a>

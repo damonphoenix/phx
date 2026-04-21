@@ -1,13 +1,13 @@
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <clipPath id="logo-boundary">
-      <circle cx="50" cy="50" r="46"/>
-    </clipPath>
+    <mask id="logo-mask">
+      <circle cx="50" cy="50" r="46" fill="white"/>
+    </mask>
   </defs>
-
-  <!-- Moon: fills the full outer circle -->
-  <circle cx="50" cy="50" r="46" fill="#f5e040"/>
-
-  <!-- Sun: offset upper-right, clipped to same outer circle -->
-  <circle cx="62" cy="38" r="44" fill="#ff9029" clip-path="url(#logo-boundary)"/>
+  <g mask="url(#logo-mask)">
+    <!-- Moon: full boundary circle (yellow) -->
+    <circle cx="50" cy="50" r="46" fill="#f5e040"/>
+    <!-- Sun: smaller, offset upper-right (orange) -->
+    <circle cx="59" cy="41" r="40" fill="#ff9029"/>
+  </g>
 </svg>

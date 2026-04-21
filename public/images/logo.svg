@@ -1,21 +1,13 @@
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
-  <style>
-    .moon { fill: #f5e040; }
-    .sun  { fill: #1a1a1a; }
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="logo-boundary">
+      <circle cx="50" cy="50" r="46"/>
+    </clipPath>
+  </defs>
 
-    /* Standalone SVG: respect OS preference */
-    @media (prefers-color-scheme: dark) {
-      .sun  { fill: #ffffff; }
-      .moon { fill: #f5e040; }
-    }
+  <!-- Moon: fills the full outer circle -->
+  <circle cx="50" cy="50" r="46" fill="#f5e040"/>
 
-    /* Inline in HTML: respect data-theme on <html> */
-    :root[data-theme="dark"]  .sun  { fill: #ffffff; }
-    :root[data-theme="light"] .sun  { fill: #1a1a1a; }
-  </style>
-
-  <!-- Moon: slightly lower-left, creates the crescent -->
-  <circle class="moon" cx="44" cy="56" r="42"/>
-  <!-- Sun: on top, offset upper-right -->
-  <circle class="sun"  cx="56" cy="44" r="40"/>
+  <!-- Sun: offset upper-right, clipped to same outer circle -->
+  <circle cx="62" cy="38" r="44" fill="#2997ff" clip-path="url(#logo-boundary)"/>
 </svg>

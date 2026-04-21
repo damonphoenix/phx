@@ -186,7 +186,7 @@ img {
 
 /* Logo SVG theme colors */
 .logo-moon { fill: #f5e040; }
-.logo-sun  { fill: var(--text-primary); }
+.logo-sun  { fill: var(--accent); }
 
 .nav__links {
   display: flex;

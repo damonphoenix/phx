@@ -19,8 +19,13 @@
     <div class="nav__inner">
       <a href="#hero" class="nav__logo" aria-label="Damon Phoenix">
         <svg class="nav__logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle class="logo-moon" cx="44" cy="56" r="42"/>
-          <circle class="logo-sun"  cx="56" cy="44" r="40"/>
+          <defs>
+            <clipPath id="nav-logo-clip">
+              <circle cx="50" cy="50" r="46"/>
+            </clipPath>
+          </defs>
+          <circle class="logo-moon" cx="50" cy="50" r="46"/>
+          <circle class="logo-sun"  cx="62" cy="38" r="44" clip-path="url(#nav-logo-clip)"/>
         </svg>
         <span>Damon <span class="nav__logo-accent">Phoenix</span></span>
       </a>

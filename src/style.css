@@ -604,6 +604,16 @@ img {
   margin-top: 60px;
 }
 
+.work__card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.work__card-link:first-child {
+  grid-column: span 2;
+}
+
 .work__card {
   position: relative;
   border-radius: var(--radius-lg);
@@ -612,7 +622,7 @@ img {
   border: 1px solid var(--border);
   transition: all var(--transition-medium);
   cursor: pointer;
-  group: true;
+  height: 100%;
 }
 
 .work__card:hover {
@@ -621,8 +631,8 @@ img {
   box-shadow: var(--shadow-card-hover);
 }
 
-.work__card:first-child {
-  grid-column: span 2;
+.work__card-link:first-child .work__card {
+  /* No special override needed for the card itself, the link handle sizes */
 }
 
 .work__card-image {

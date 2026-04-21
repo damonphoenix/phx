@@ -210,6 +210,12 @@ img {
   color: var(--text-primary);
 }
 
+.nav__cta {
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 980px;
+}
+
 .nav__theme-toggle {
   background: none;
   border: none;

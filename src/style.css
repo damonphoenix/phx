@@ -16,7 +16,7 @@
   --max-width-wide: 1200px;
   --section-padding: 140px;
   --section-padding-mobile: 80px;
-  --nav-height: 52px;
+  --nav-height: 64px;
 
   /* Transitions */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -168,6 +168,7 @@ img {
   color: var(--text-primary);
   text-decoration: none;
   transition: opacity var(--transition-fast);
+  line-height: 1;
 }
 
 .nav__logo:hover {
@@ -175,18 +176,18 @@ img {
 }
 
 .nav__logo-svg {
-  width: 28px;
-  height: 28px;
+  height: 42px;
+  width: auto;
   flex-shrink: 0;
+  display: block;
 }
 
 .nav__logo-accent {
   color: var(--accent);
 }
 
-/* Phoenix logo color — complementary orange to site blue */
-[data-theme="dark"]  .nav__logo-svg { color: #ff9029; }
-[data-theme="light"] .nav__logo-svg { color: #e66c00; }
+[data-theme="dark"]  .nav__logo-svg { color: #ffffff; }
+[data-theme="light"] .nav__logo-svg { color: #000000; }
 
 .nav__links {
   display: flex;
@@ -1060,6 +1061,10 @@ img {
     padding: var(--section-padding-mobile) 24px;
   }
 
+  .hero {
+    padding-bottom: 140px;
+  }
+
   .nav__links {
     display: none;
   }
@@ -1115,6 +1120,10 @@ img {
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding-bottom: 160px;
+  }
+
   .hero__name {
     font-size: clamp(40px, 11vw, 52px);
   }

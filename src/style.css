@@ -520,24 +520,30 @@ img {
 
 .about__image-wrapper {
   position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
   aspect-ratio: 4 / 5;
-  background: var(--bg-secondary);
+  background: transparent;
+  clip-path: url(#about-mask);
+  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.45));
 }
 
 .about__image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .about__image-wrapper::after {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border);
+  background: linear-gradient(
+    160deg,
+    rgba(41, 151, 255, 0.08) 0%,
+    transparent 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
   pointer-events: none;
 }
 

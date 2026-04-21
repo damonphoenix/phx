@@ -54,6 +54,7 @@
 
   <!-- ===== HERO ===== -->
   <section class="section hero" id="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero__content">
       <p class="hero__greeting">Hello, I'm</p>
       <h1 class="hero__name"></h1>
@@ -118,8 +119,21 @@
         <!-- Featured Project -->
         <a href="https://brewery.phx.cx" target="_blank" rel="noopener noreferrer" class="work__card-link">
           <div class="work__card reveal-scale" id="project-1">
-            <div class="work__card-image">
-              <img src="/images/brewery_hero.png" alt="Brewery" />
+            <div class="work__card-image work__card-image--logo" style="background: linear-gradient(135deg, #1a0a00 0%, #7c2d12 25%, #c2410c 60%, #f97316 85%, #fbbf24 100%); display:flex; align-items:center; justify-content:center;">
+              <div style="display:flex; align-items:center; gap:1.25rem; filter: drop-shadow(0 4px 28px rgba(251,191,36,0.3));">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:64px; height:64px; color:#fef3c7;">
+                  <g id="barrel-body">
+                    <path d="M10 6 C 10 5, 22 5, 22 6 C 26 16, 26 22, 22 26 C 22 27, 10 27, 10 26 C 6 22, 6 16, 10 6 Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 8 11 L 24 11 M 8 21 L 24 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M 13 11 L 13 21 M 16 11 L 16 21 M 19 11 L 19 21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+                  </g>
+                  <g id="barrel-tap">
+                    <path d="M 23 18 L 27 18 A 1 1 0 0 1 28 19 L 28 22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 26.5 15 L 26.5 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                </svg>
+                <span style="font-size:2.75rem; font-weight:700; letter-spacing:-0.02em; color:#fef3c7; font-family:inherit;">Brewery</span>
+              </div>
             </div>
             <div class="work__card-content">
               <span class="work__card-category">Privacy Offline Tool</span>
@@ -139,8 +153,21 @@
         <!-- Project 2 -->
         <a href="https://surf.phx.cx" target="_blank" rel="noopener noreferrer" class="work__card-link">
           <div class="work__card reveal-scale reveal-delay-1" id="project-2">
-            <div class="work__card-image">
-              <img src="/images/surf_screenshot.png" alt="Kapaa Surf School" />
+            <div class="work__card-image work__card-image--logo" style="background: linear-gradient(135deg, #0a2540 0%, #0f4c75 30%, #0891b2 65%, #06b6d4 85%, #67e8f9 100%); display:flex; align-items:center; justify-content:center;">
+              <div style="display:flex; align-items:center; gap:1.1rem; filter: drop-shadow(0 4px 28px rgba(6,182,212,0.35));">
+                <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:64px; height:64px; flex-shrink:0;">
+                  <defs>
+                    <linearGradient id="kss-logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ffffff"/>
+                      <stop offset="100%" stop-color="#bae6fd"/>
+                    </linearGradient>
+                  </defs>
+                  <g transform="translate(0,600) scale(0.1,-0.1)" fill="url(#kss-logo-gradient)" stroke="none">
+                    <path d="M3365 4430 c-237 -21 -494 -113 -712 -256 -136 -88 -198 -138 -331 -269 -173 -168 -277 -307 -548 -732 -148 -233 -234 -343 -350 -451 -213 -200 -501 -354 -744 -398 -147 -26 -170 -33 -196 -61 -42 -45 -26 -133 30 -162 60 -32 319 19 517 102 198 83 382 205 548 363 158 150 257 279 381 492 53 91 219 342 291 439 80 108 243 280 349 367 206 171 442 289 667 332 139 27 343 23 463 -9 199 -53 323 -121 453 -248 85 -84 95 -103 45 -88 -77 22 -195 30 -272 20 -173 -24 -296 -89 -431 -225 -73 -74 -98 -107 -131 -176 -43 -89 -78 -207 -88 -300 -16 -139 36 -368 116 -510 104 -185 312 -354 553 -451 182 -73 392 -119 543 -119 45 0 82 -4 82 -9 0 -10 -118 -43 -233 -67 -106 -21 -324 -29 -444 -15 -280 33 -557 158 -733 331 -140 137 -214 267 -267 469 -24 87 -26 115 -27 297 -1 184 -3 204 -20 223 -26 28 -78 42 -120 30 -75 -21 -250 -199 -381 -389 -67 -97 -288 -391 -372 -495 -86 -107 -247 -262 -358 -345 -114 -86 -133 -114 -116 -171 25 -84 105 -102 192 -43 218 146 446 396 744 814 76 107 145 201 153 209 7 8 20 24 29 37 21 32 33 21 33 -28 0 -115 60 -324 132 -458 219 -411 622 -651 1175 -701 204 -18 472 20 723 103 250 83 642 307 683 391 23 46 11 94 -34 132 -38 32 -74 32 -149 0 -79 -33 -184 -61 -305 -81 -129 -21 -450 -24 -555 -5 -166 29 -368 112 -513 209 -270 180 -389 540 -267 808 74 164 199 270 362 309 154 36 297 0 453 -115 83 -62 122 -66 165 -20 38 41 47 99 26 178 -78 304 -366 585 -705 687 -179 53 -336 70 -506 55z"/>
+                  </g>
+                </svg>
+                <span style="font-size:1.6rem; font-weight:700; letter-spacing:-0.02em; color:#f0f9ff; font-family:inherit; line-height:1.2;">Kapaʻa<br/>Surf School</span>
+              </div>
             </div>
             <div class="work__card-content">
               <span class="work__card-category">AI Dashboard</span>

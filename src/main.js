@@ -263,6 +263,106 @@ const HeroParallax = {
   }
 };
 
+// --- Hero Canvas Background ---
+const HeroCanvas = {
+  init() {
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width, height, orbs, rafId;
+
+    const ORB_DEFS = {
+      dark: [
+        { r: 0.52, color: [41,  151, 255], alpha: 0.13 },
+        { r: 0.42, color: [94,  92,  230], alpha: 0.10 },
+        { r: 0.38, color: [90,  200, 250], alpha: 0.09 },
+        { r: 0.30, color: [52,  211, 153], alpha: 0.07 },
+        { r: 0.28, color: [167, 139, 250], alpha: 0.08 },
+      ],
+      light: [
+        { r: 0.52, color: [0,   113, 227], alpha: 0.07 },
+        { r: 0.42, color: [88,  86,  214], alpha: 0.06 },
+        { r: 0.38, color: [52,  170, 220], alpha: 0.06 },
+        { r: 0.30, color: [16,  185, 129], alpha: 0.05 },
+        { r: 0.28, color: [139, 92,  246], alpha: 0.05 },
+      ],
+    };
+
+    function resize() {
+      width  = canvas.width  = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+    }
+
+    function isDark() {
+      return document.documentElement.getAttribute('data-theme') !== 'light';
+    }
+
+    function buildOrbs() {
+      const defs = isDark() ? ORB_DEFS.dark : ORB_DEFS.light;
+      orbs = defs.map(d => ({
+        x:     Math.random() * width,
+        y:     Math.random() * height,
+        // slow, smooth velocity
+        vx:    (Math.random() - 0.5) * 0.35,
+        vy:    (Math.random() - 0.5) * 0.35,
+        radius: Math.min(width, height) * d.r,
+        color:  d.color,
+        alpha:  d.alpha,
+      }));
+    }
+
+    function tick() {
+      ctx.clearRect(0, 0, width, height);
+
+      orbs.forEach(o => {
+        o.x += o.vx;
+        o.y += o.vy;
+        // wrap edges
+        if (o.x < -o.radius)        o.x = width  + o.radius;
+        if (o.x > width  + o.radius) o.x = -o.radius;
+        if (o.y < -o.radius)        o.y = height + o.radius;
+        if (o.y > height + o.radius) o.y = -o.radius;
+
+        const [r, g, b] = o.color;
+        const grad = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, o.radius);
+        grad.addColorStop(0,   `rgba(${r},${g},${b},${o.alpha})`);
+        grad.addColorStop(0.5, `rgba(${r},${g},${b},${o.alpha * 0.4})`);
+        grad.addColorStop(1,   `rgba(${r},${g},${b},0)`);
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(o.x, o.y, o.radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      rafId = requestAnimationFrame(tick);
+    }
+
+    // Pause when hero is out of view for perf
+    const heroEl = canvas.closest('.hero');
+    const visObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          if (!rafId) rafId = requestAnimationFrame(tick);
+        } else {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      });
+    }, { threshold: 0 });
+    if (heroEl) visObserver.observe(heroEl);
+
+    // Rebuild on theme change
+    const mutObs = new MutationObserver(buildOrbs);
+    mutObs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    window.addEventListener('resize', () => { resize(); buildOrbs(); });
+
+    resize();
+    buildOrbs();
+    rafId = requestAnimationFrame(tick);
+  }
+};
+
 // --- Initialize Everything ---
 document.addEventListener('DOMContentLoaded', () => {
   ThemeManager.init();
@@ -273,4 +373,5 @@ document.addEventListener('DOMContentLoaded', () => {
   NavScroll.init();
   HeroParallax.init();
   Typewriter.init();
+  HeroCanvas.init();
 });

@@ -159,28 +159,34 @@ img {
 }
 
 .nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  
-  /* Ocean wave fill from top */
-  background-image: linear-gradient(to bottom, #4db8ff 0%, #2997ff 48%, var(--text-primary) 52%, var(--text-primary) 100%);
-  background-size: 100% 220%;
-  background-position: bottom;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  transition: background-position 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.nav__logo span {
-  -webkit-text-fill-color: transparent; 
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
 }
 
 .nav__logo:hover {
-  background-position: top;
+  opacity: 0.75;
 }
+
+.nav__logo-svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.nav__logo-accent {
+  color: var(--accent);
+}
+
+/* Logo SVG theme colors */
+.logo-moon { fill: #f5e040; }
+.logo-sun  { fill: var(--text-primary); }
 
 .nav__links {
   display: flex;

@@ -17,7 +17,13 @@
   <!-- ===== NAVIGATION ===== -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#hero" class="nav__logo">Damon <span>Phoenix</span></a>
+      <a href="#hero" class="nav__logo" aria-label="Damon Phoenix">
+        <svg class="nav__logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle class="logo-moon" cx="44" cy="56" r="42"/>
+          <circle class="logo-sun"  cx="56" cy="44" r="40"/>
+        </svg>
+        <span>Damon <span class="nav__logo-accent">Phoenix</span></span>
+      </a>
       <ul class="nav__links">
         <li><a href="#about">About</a></li>
         <li><a href="#work">Work</a></li>

@@ -9,5 +9,5 @@
   <circle cx="50" cy="50" r="46" fill="#f5e040"/>
 
   <!-- Sun: offset upper-right, clipped to same outer circle -->
-  <circle cx="62" cy="38" r="44" fill="#2997ff" clip-path="url(#logo-boundary)"/>
+  <circle cx="62" cy="38" r="44" fill="#ff9029" clip-path="url(#logo-boundary)"/>
 </svg>

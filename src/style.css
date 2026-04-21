@@ -186,7 +186,10 @@ img {
 
 /* Logo SVG theme colors */
 .logo-moon { fill: #f5e040; }
-.logo-sun  { fill: var(--accent); }
+
+/* Complementary hue to site blue (#2997ff ≈ hsl(209°)) → hsl(29°) = orange */
+[data-theme="dark"]  .logo-sun { fill: #ff9029; }
+[data-theme="light"] .logo-sun { fill: #e66c00; }
 
 .nav__links {
   display: flex;

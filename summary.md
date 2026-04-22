@@ -1,3 +1,6 @@
+- **2026-04-22 04:15**: Renamed "Chef Ed" to "Kauai Exclusive Cuisine" across the project card title and the card's placeholder image text.
+- **2026-04-22 04:14**: Updated the animated background blobs to render dynamically in both light and dark modes, increasing their opacity in light mode for better visibility. The blobs now feature a smooth, time-based pulsing animation and have been integrated into the "Get in Touch" contact section as well.
+- **2026-04-22 04:10**: Added custom hover animations to the navigation logo: the SVG now features a flying animation, and the "Damon Phoenix" text highlights with an animated blue gradient wave. The word "Phoenix" also defaults to white.
 - **2026-04-22 04:08**: Replaced the "Official Website" link in the Music section with a direct link to the Spotify artist page, complete with a new music note icon.
 - **2026-04-22 04:02**: Refined the site's hero subtext and `<title>` tag to "iOS + Web Dev & Designer", and updated the favicon from the monochromatic logo to the colored Phoenix SVG (`/favicon.svg`).
 - **2026-04-22 03:59**: Updated `index.html` to remove the "based in Hawai'i" subtext, changing the hero title to "iOS & Web Dev". Additionally, updated the site's `<title>` tag to "Damon Phoenix - iOS, Android, Web Dev & Designer".

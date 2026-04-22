@@ -399,6 +399,9 @@ img {
 .hero__content {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero__greeting {
@@ -418,9 +421,10 @@ img {
   line-height: 1.0;
   margin-bottom: 16px;
   min-height: clamp(52px, 10vw, 96px);
-  display: inline-block;
-  min-width: 13ch;
-  text-align: left;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  min-width: 10ch;
   white-space: nowrap;
 }
 
@@ -709,9 +713,14 @@ img {
 #project-1 .work__card-badge {
   left: auto;
   right: 20px;
-  background: linear-gradient(135deg, #f97316, #fbbf24);
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 10px 28px rgba(251, 191, 36, 0.22);
+}
+
+#project-4 .work__card-badge {
+  left: auto;
+  right: 20px;
+  background: linear-gradient(135deg, #374151, #4b5563);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .work__card-image img {
@@ -1111,8 +1120,8 @@ img {
   }
   
   .about__image-wrapper {
-    aspect-ratio: 16/9;
-    max-height: 480px;
+    aspect-ratio: 4/3;
+    max-height: 420px;
   }
 }
 
@@ -1138,8 +1147,12 @@ img {
   }
 
   .about__image-wrapper {
-    aspect-ratio: 16/10;
-    max-height: 400px;
+    aspect-ratio: 4/3;
+    max-height: 360px;
+  }
+
+  .about__image-wrapper img {
+    object-position: center top;
   }
 
   .about__stats {

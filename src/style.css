@@ -643,8 +643,8 @@ img {
 
 .work__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
   margin-top: 60px;
   align-items: stretch;
 }
@@ -690,10 +690,10 @@ img {
 
 .work__card-badge {
   position: absolute;
-  top: 28px;
-  left: 28px;
+  top: 20px;
+  left: 20px;
   z-index: 2;
-  padding: 6px 10px;
+  padding: 7px 12px;
   border-radius: 980px;
   font-size: 11px;
   font-weight: 700;
@@ -704,6 +704,14 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 24px rgba(41, 151, 255, 0.25);
   pointer-events: none;
+}
+
+#project-1 .work__card-badge {
+  left: auto;
+  right: 20px;
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 28px rgba(251, 191, 36, 0.22);
 }
 
 .work__card-image img {
@@ -718,7 +726,7 @@ img {
 }
 
 .work__card-content {
-  padding: 28px;
+  padding: 30px;
 }
 
 .work__card-category {

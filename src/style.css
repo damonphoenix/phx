@@ -418,10 +418,8 @@ img {
   line-height: 1.0;
   margin-bottom: 16px;
   min-height: clamp(52px, 10vw, 96px);
-  display: inline-flex;
-  align-items: baseline;
-  justify-content: flex-start;
-  width: 13ch;
+  display: inline-block;
+  min-width: 13ch;
   text-align: left;
   white-space: nowrap;
 }

@@ -193,10 +193,11 @@ const Typewriter = {
     if (!el) return;
     
     el.innerHTML = '';
-    const text1 = "Damon ";
+    const text1 = "Damon";
     const text2 = "Phoenix.";
     
     const normalText = document.createTextNode('');
+    const spacerText = document.createTextNode('');
     const accentSpan = document.createElement('span');
     accentSpan.className = 'hero__name-accent';
     
@@ -205,6 +206,7 @@ const Typewriter = {
     cursor.textContent = '|';
     
     el.appendChild(normalText);
+    el.appendChild(spacerText);
     el.appendChild(accentSpan);
     el.appendChild(cursor);
     
@@ -219,8 +221,9 @@ const Typewriter = {
 
     const shouldHesitate = () => Math.random() < 0.09;
     const hesitation = () => Math.floor(Math.random() * (520 - 220 + 1) + 220);
+    const midWordPause = () => Math.floor(Math.random() * (900 - 520 + 1) + 520);
 
-    const typeWord = (text, node, callback) => {
+    const typeWord = (text, node, callback, opts = {}) => {
       let i = 0;
       const type = () => {
         if (i < text.length) {
@@ -231,7 +234,11 @@ const Typewriter = {
             node.textContent += ch;
           }
           i++;
-          const delay = baseSpeed() + extraPauseForChar(ch) + (shouldHesitate() ? hesitation() : 0);
+          const hitMidPause = typeof opts.midPauseAt === 'number' && i === opts.midPauseAt;
+          const delay = baseSpeed()
+            + extraPauseForChar(ch)
+            + (hitMidPause ? midWordPause() : 0)
+            + (shouldHesitate() ? hesitation() : 0);
           setTimeout(type, delay);
         } else if (callback) {
           callback();
@@ -243,37 +250,29 @@ const Typewriter = {
     // Wait a bit before typing starts for visual effect
     setTimeout(() => {
       typeWord(text1, normalText, () => {
+        spacerText.nodeValue = ' ';
         typeWord(text2, accentSpan, () => {
           cursor.classList.add('blink');
-        });
+        }, { midPauseAt: Math.floor((text2.length - 1) / 2) });
       });
     }, 400); 
   }
 };
 
-// --- Parallax Subtle Effect on Hero ---
+// --- Scroll Indicator Fade ---
 const HeroParallax = {
   init() {
-    const hero = document.querySelector('.hero__content');
     const scrollIndicator = document.querySelector('.hero__scroll-indicator');
-    if (!hero) return;
+    if (!scrollIndicator) return;
 
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrolled = window.scrollY;
-          const rate = scrolled * 0.3;
-          if (scrolled < window.innerHeight) {
-            hero.style.transform = `translateY(${rate}px)`;
-            hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.6;
-            
-            if (scrollIndicator) {
-              const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-              const scrollProgress = scrolled / maxScroll;
-              scrollIndicator.style.opacity = Math.max(0, Math.min(1, 1 - (scrollProgress / 0.5)));
-            }
-          }
+          const fadeDistance = Math.max(1, Math.floor(window.innerHeight * 0.45));
+          const t = Math.max(0, Math.min(1, scrolled / fadeDistance));
+          scrollIndicator.style.opacity = String(1 - t);
           ticking = false;
         });
         ticking = true;

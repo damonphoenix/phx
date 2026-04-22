@@ -1,3 +1,7 @@
+- **2026-04-22 04:08**: Replaced the "Official Website" link in the Music section with a direct link to the Spotify artist page, complete with a new music note icon.
+- **2026-04-22 04:02**: Refined the site's hero subtext and `<title>` tag to "iOS + Web Dev & Designer", and updated the favicon from the monochromatic logo to the colored Phoenix SVG (`/favicon.svg`).
+- **2026-04-22 03:59**: Updated `index.html` to remove the "based in Hawai'i" subtext, changing the hero title to "iOS & Web Dev". Additionally, updated the site's `<title>` tag to "Damon Phoenix - iOS, Android, Web Dev & Designer".
+- **2026-04-22 03:58**: Decreased the height of the `.nav__logo-svg` from `42px` to `28px` in `style.css` so the logo icon is properly centered and proportional to the accompanying text.
 - **2026-04-22 03:50**: Fixed a broken "Official Website" link by removing the non-functional "www" subdomain.
 - **2026-04-22 03:45**: Fixed a typo in the 'Music' section ("an new app" -> "a new app").
 - **2026-04-22 03:43**: Updated the 'Music' section copy with a more personal narrative about songwriting and creative philosophy.

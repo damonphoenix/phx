@@ -1,3 +1,4 @@
+- **2026-04-22 03:25**: Replaced the second album cover with a custom "SOUL" design featuring a stylized sun symbol and a vintage surfboard background.
 - **2026-04-22 03:22**: Replaced the "Lightning In A Bottle" album cover with a clean watercolor illustration of a beach swing, removing the play button overlay.
 - **2026-04-22 02:31**: Updated contact email to aloha@damonphoenix.com and changed the footer text to "All rights reserved." Pushed all changes to Git.
 - **2026-04-22 02:13**: Updated the 'About' section portrait image with a new photo and refined the Hero section z-index for better scroll indicator visibility. Pushed all changes to the remote repository.

@@ -212,7 +212,7 @@ img {
   width: auto;
   flex-shrink: 0;
   display: block;
-  transform: translateY(1px);
+  transform: translateY(0);
 }
 
 .nav__logo-accent {
@@ -402,6 +402,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .hero__greeting {
@@ -421,11 +422,13 @@ img {
   line-height: 1.0;
   margin-bottom: 16px;
   min-height: clamp(52px, 10vw, 96px);
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  min-width: 10ch;
+  text-align: center;
   white-space: nowrap;
+}
+
+.hero__name-normal,
+.hero__name-accent {
+  display: inline;
 }
 
 .hero__name-accent {
@@ -436,10 +439,11 @@ img {
 }
 
 .typewriter-cursor {
+  display: inline-block;
   font-weight: 300;
   color: var(--text-primary);
-  display: inline-block;
   margin-left: 2px;
+  -webkit-text-fill-color: var(--text-primary);
 }
 
 .typewriter-cursor.blink {
@@ -450,6 +454,7 @@ img {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
 
 .hero__title {
   font-size: clamp(20px, 3vw, 28px);

@@ -193,20 +193,20 @@ const Typewriter = {
     if (!el) return;
     
     el.innerHTML = '';
-    const text1 = "Damon ";
+    const text1 = "Damon\u00a0";
     const text2 = "Phoenix.";
     
-    const normalText = document.createTextNode('');
+    const normalSpan = document.createElement('span');
+    normalSpan.className = 'hero__name-normal';
     const accentSpan = document.createElement('span');
     accentSpan.className = 'hero__name-accent';
-    
     const cursor = document.createElement('span');
     cursor.className = 'typewriter-cursor';
     cursor.textContent = '|';
-    
-    el.appendChild(normalText);
+
+    el.appendChild(normalSpan);
+    normalSpan.appendChild(cursor);
     el.appendChild(accentSpan);
-    el.appendChild(cursor);
     
     const baseSpeed = () => Math.floor(Math.random() * (160 - 60 + 1) + 60);
     const extraPauseForChar = (ch) => {
@@ -226,11 +226,7 @@ const Typewriter = {
       const type = () => {
         if (i < text.length) {
           const ch = text.charAt(i);
-          if (node.nodeType === Node.TEXT_NODE) {
-            node.nodeValue += ch;
-          } else {
-            node.textContent += ch;
-          }
+          node.insertBefore(document.createTextNode(ch), cursor.parentNode === node ? cursor : null);
           i++;
           const hitMidPause = typeof opts.midPauseAt === 'number' && i === opts.midPauseAt;
           const delay = baseSpeed()
@@ -247,7 +243,8 @@ const Typewriter = {
 
     // Wait a bit before typing starts for visual effect
     setTimeout(() => {
-      typeWord(text1, normalText, () => {
+      typeWord(text1, normalSpan, () => {
+        accentSpan.appendChild(cursor);
         typeWord(text2, accentSpan, () => {
           cursor.classList.add('blink');
         }, { midPauseAt: Math.floor((text2.length - 1) / 2) });
@@ -267,6 +264,7 @@ const HeroParallax = {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrolled = window.scrollY;
+          scrollIndicator.style.animation = 'none';
           const fadeDistance = Math.max(1, Math.floor(window.innerHeight * 0.45));
           const t = Math.max(0, Math.min(1, scrolled / fadeDistance));
           scrollIndicator.style.opacity = String(1 - t);

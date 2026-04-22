@@ -194,7 +194,7 @@ const Typewriter = {
     
     el.innerHTML = '';
     const text1 = "Damon ";
-    const text2 = "Phoenix";
+    const text2 = "Phoenix.";
     
     const normalText = document.createTextNode('');
     const accentSpan = document.createElement('span');
@@ -208,19 +208,31 @@ const Typewriter = {
     el.appendChild(accentSpan);
     el.appendChild(cursor);
     
-    const typeSpeed = () => Math.floor(Math.random() * (120 - 40 + 1) + 40);
-    
+    const baseSpeed = () => Math.floor(Math.random() * (160 - 60 + 1) + 60);
+    const extraPauseForChar = (ch) => {
+      if (ch === ' ') return Math.floor(Math.random() * (420 - 180 + 1) + 180);
+      if (ch === '.' || ch === ',' || ch === '!' || ch === '?' || ch === ':') {
+        return Math.floor(Math.random() * (600 - 280 + 1) + 280);
+      }
+      return 0;
+    };
+
+    const shouldHesitate = () => Math.random() < 0.09;
+    const hesitation = () => Math.floor(Math.random() * (520 - 220 + 1) + 220);
+
     const typeWord = (text, node, callback) => {
       let i = 0;
       const type = () => {
         if (i < text.length) {
+          const ch = text.charAt(i);
           if (node.nodeType === Node.TEXT_NODE) {
-            node.nodeValue += text.charAt(i);
+            node.nodeValue += ch;
           } else {
-            node.textContent += text.charAt(i);
+            node.textContent += ch;
           }
           i++;
-          setTimeout(type, typeSpeed());
+          const delay = baseSpeed() + extraPauseForChar(ch) + (shouldHesitate() ? hesitation() : 0);
+          setTimeout(type, delay);
         } else if (callback) {
           callback();
         }

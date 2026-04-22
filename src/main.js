@@ -257,7 +257,9 @@ const HeroParallax = {
             hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.6;
             
             if (scrollIndicator) {
-              scrollIndicator.style.opacity = Math.max(0, 1 - (scrolled / (window.innerHeight * 0.5)));
+              const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+              const scrollProgress = scrolled / maxScroll;
+              scrollIndicator.style.opacity = Math.max(0, Math.min(1, 1 - (scrollProgress / 0.5)));
             }
           }
           ticking = false;

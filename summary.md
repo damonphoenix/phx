@@ -1,3 +1,4 @@
+- **2026-04-22 04:20**: Replaced the placeholder icons for the SoundCloud and Spotify links with their official brand SVGs, configured with `currentColor` to dynamically match the site's light and dark modes.
 - **2026-04-22 04:15**: Renamed "Chef Ed" to "Kauai Exclusive Cuisine" across the project card title and the card's placeholder image text.
 - **2026-04-22 04:14**: Updated the animated background blobs to render dynamically in both light and dark modes, increasing their opacity in light mode for better visibility. The blobs now feature a smooth, time-based pulsing animation and have been integrated into the "Get in Touch" contact section as well.
 - **2026-04-22 04:10**: Added custom hover animations to the navigation logo: the SVG now features a flying animation, and the "Damon Phoenix" text highlights with an animated blue gradient wave. The word "Phoenix" also defaults to white.

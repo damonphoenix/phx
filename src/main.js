@@ -193,11 +193,10 @@ const Typewriter = {
     if (!el) return;
     
     el.innerHTML = '';
-    const text1 = "Damon";
+    const text1 = "Damon ";
     const text2 = "Phoenix.";
     
     const normalText = document.createTextNode('');
-    const spacerText = document.createTextNode('');
     const accentSpan = document.createElement('span');
     accentSpan.className = 'hero__name-accent';
     
@@ -206,7 +205,6 @@ const Typewriter = {
     cursor.textContent = '|';
     
     el.appendChild(normalText);
-    el.appendChild(spacerText);
     el.appendChild(accentSpan);
     el.appendChild(cursor);
     
@@ -250,7 +248,6 @@ const Typewriter = {
     // Wait a bit before typing starts for visual effect
     setTimeout(() => {
       typeWord(text1, normalText, () => {
-        spacerText.nodeValue = ' ';
         typeWord(text2, accentSpan, () => {
           cursor.classList.add('blink');
         }, { midPauseAt: Math.floor((text2.length - 1) / 2) });
